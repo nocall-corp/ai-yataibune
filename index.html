@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI屋形船 | 第3回イベント - ウェイティングリスト受付中</title>
+    <meta name="description" content="AI屋形船イベント第3回の開催が決定！第1回・第2回の感動的な瞬間をご覧いただき、次回への参加をお待ちしております。">
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="AI屋形船 - 第3回イベント開催決定">
+    <meta property="og:description" content="新しい出会いと発見の場。AI屋形船イベント第3回ウェイティングリスト受付中">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://example.com/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI屋形船 - 第3回イベント開催決定">
+    <meta name="twitter:description" content="新しい出会いと発見の場。ウェイティングリスト受付中">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ローディング画面 -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <!-- ローディング画面の屋形船アニメーション -->
+            <div class="loading-yakatabune-animation">
+                <svg class="loading-yakatabune" viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
+                    <!-- リアルなグラデーション定義 -->
+                    <defs>
+                        <!-- 木材の質感（よりリアル） -->
+                        <linearGradient id="woodGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#8B6839;stop-opacity:1" />
+                            <stop offset="20%" style="stop-color:#9B7843;stop-opacity:1" />
+                            <stop offset="40%" style="stop-color:#7D5A2A;stop-opacity:1" />
+                            <stop offset="60%" style="stop-color:#8B6839;stop-opacity:1" />
+                            <stop offset="80%" style="stop-color:#6B4423;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#5D3A1A;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="woodSide" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#5D3A1A;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#7D5A2A;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#5D3A1A;stop-opacity:1" />
+                        </linearGradient>
+                        <!-- 屋根瓦の質感 -->
+                        <linearGradient id="tileGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2F4F4F;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#3A5555;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1C3333;stop-opacity:1" />
+                        </linearGradient>
+                        <!-- 提灯の光 -->
+                        <radialGradient id="realLantern">
+                            <stop offset="0%" style="stop-color:#FFF8DC;stop-opacity:1" />
+                            <stop offset="20%" style="stop-color:#FFE4B5;stop-opacity:0.9" />
+                            <stop offset="50%" style="stop-color:#FFA500;stop-opacity:0.7" />
+                            <stop offset="100%" style="stop-color:#FF6347;stop-opacity:0.4" />
+                        </radialGradient>
+                        <!-- 窓の光 -->
+                        <radialGradient id="windowLight">
+                            <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#FFD700;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0.6" />
+                        </radialGradient>
+                        <filter id="softGlow">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                        <!-- 木目パターン（詳細） -->
+                        <pattern id="woodPattern" x="0" y="0" width="6" height="12" patternUnits="userSpaceOnUse">
+                            <line x1="0" y1="0" x2="0" y2="12" stroke="#4A2C17" stroke-width="0.3" opacity="0.4"/>
+                            <line x1="2" y1="0" x2="2" y2="12" stroke="#5D3A1A" stroke-width="0.2" opacity="0.3"/>
+                            <line x1="3.5" y1="0" x2="3.5" y2="12" stroke="#4A2C17" stroke-width="0.15" opacity="0.25"/>
+                            <line x1="5" y1="0" x2="5" y2="12" stroke="#5D3A1A" stroke-width="0.2" opacity="0.3"/>
+                            <path d="M1 3 Q2 4 3 3" stroke="#4A2C17" stroke-width="0.1" fill="none" opacity="0.2"/>
+                            <path d="M4 7 Q5 8 6 7" stroke="#4A2C17" stroke-width="0.1" fill="none" opacity="0.2"/>
+                        </pattern>
+                        <!-- 3D効果用シャドウ -->
+                        <filter id="shadow3d" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                            <feOffset dx="2" dy="4" result="offsetblur"/>
+                            <feFlood flood-color="#000000" flood-opacity="0.5"/>
+                            <feComposite in2="offsetblur" operator="in"/>
+                            <feMerge>
+                                <feMergeNode/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- 船体（超リアルな木造船） -->
+                    <g class="boat-body" filter="url(#shadow3d)">
+                        <!-- 船底（3D効果） -->
+                        <path d="M25 75 L215 75 L210 95 L205 100 L35 100 L30 95 Z" 
+                              fill="url(#woodGradient)" stroke="#3A2317" stroke-width="0.8"/>
+                        <path d="M25 75 L215 75 L210 95 L205 100 L35 100 L30 95 Z" 
+                              fill="url(#woodPattern)" opacity="0.6"/>
+                        
+                        <!-- 船側面（左） -->
+                        <path d="M25 70 L25 75 L30 95 L35 100 L35 90 L30 70 Z" 
+                              fill="url(#woodSide)" stroke="#3A2317" stroke-width="0.5" opacity="0.9"/>
+                        
+                        <!-- 船側面（右） -->
+                        <path d="M215 70 L215 75 L210 95 L205 100 L205 90 L210 70 Z" 
+                              fill="url(#woodSide)" stroke="#3A2317" stroke-width="0.5" opacity="0.9"/>
+                        
+                        <!-- 船体の板張り（横板） -->
+                        <g opacity="0.6">
+                            <line x1="26" y1="77" x2="214" y2="77" stroke="#4A2C17" stroke-width="0.8"/>
+                            <line x1="27" y1="80" x2="213" y2="80" stroke="#5D3A1A" stroke-width="0.6"/>
+                            <line x1="28" y1="83" x2="212" y2="83" stroke="#4A2C17" stroke-width="0.8"/>
+                            <line x1="29" y1="86" x2="211" y2="86" stroke="#5D3A1A" stroke-width="0.6"/>
+                            <line x1="30" y1="89" x2="210" y2="89" stroke="#4A2C17" stroke-width="0.8"/>
+                            <line x1="31" y1="92" x2="209" y2="92" stroke="#5D3A1A" stroke-width="0.6"/>
+                            <line x1="32" y1="95" x2="208" y2="95" stroke="#4A2C17" stroke-width="0.8"/>
+                        </g>
+                        
+                        <!-- 縦の補強材 -->
+                        <g opacity="0.4">
+                            <line x1="50" y1="75" x2="48" y2="98" stroke="#3A2317" stroke-width="1"/>
+                            <line x1="80" y1="75" x2="78" y2="98" stroke="#3A2317" stroke-width="1"/>
+                            <line x1="110" y1="75" x2="110" y2="98" stroke="#3A2317" stroke-width="1"/>
+                            <line x1="140" y1="75" x2="142" y2="98" stroke="#3A2317" stroke-width="1"/>
+                            <line x1="170" y1="75" x2="172" y2="98" stroke="#3A2317" stroke-width="1"/>
+                            <line x1="190" y1="75" x2="192" y2="98" stroke="#3A2317" stroke-width="1"/>
+                        </g>
+                        
+                        <!-- 船縁の装飾（真鍮の金具） -->
+                        <g>
+                            <path d="M25 75 L215 75" stroke="#B8860B" stroke-width="2.5"/>
+                            <path d="M25 74 L215 74" stroke="#FFD700" stroke-width="0.5" opacity="0.7"/>
+                            <!-- 留め金 -->
+                            <circle cx="40" cy="75" r="1.5" fill="#B8860B" stroke="#8B7355" stroke-width="0.3"/>
+                            <circle cx="70" cy="75" r="1.5" fill="#B8860B" stroke="#8B7355" stroke-width="0.3"/>
+                            <circle cx="100" cy="75" r="1.5" fill="#B8860B" stroke="#8B7355" stroke-width="0.3"/>
+                            <circle cx="130" cy="75" r="1.5" fill="#B8860B" stroke="#8B7355" stroke-width="0.3"/>
+                            <circle cx="160" cy="75" r="1.5" fill="#B8860B" stroke="#8B7355" stroke-width="0.3"/>
+                            <circle cx="190" cy="75" r="1.5" fill="#B8860B" stroke="#8B7355" stroke-width="0.3"/>
+                        </g>
+                    </g>
+                    
+                    <!-- 屋形構造（障子と枠） -->
+                    <g class="boat-structure">
+                        <!-- 左側面 -->
+                        <rect x="25" y="45" width="35" height="20" fill="#FFF8DC" opacity="0.9" stroke="#4A2C17" stroke-width="1"/>
+                        <!-- 障子の格子 -->
+                        <line x1="35" y1="45" x2="35" y2="65" stroke="#4A2C17" stroke-width="0.5"/>
+                        <line x1="45" y1="45" x2="45" y2="65" stroke="#4A2C17" stroke-width="0.5"/>
+                        <line x1="25" y1="52" x2="60" y2="52" stroke="#4A2C17" stroke-width="0.5"/>
+                        <line x1="25" y1="58" x2="60" y2="58" stroke="#4A2C17" stroke-width="0.5"/>
+                        
+                        <!-- 中央部分 -->
+                        <rect x="60" y="45" width="80" height="20" fill="#FFF8DC" opacity="0.9" stroke="#4A2C17" stroke-width="1"/>
+                        <!-- 中央の格子 -->
+                        <line x1="75" y1="45" x2="75" y2="65" stroke="#4A2C17" stroke-width="0.5"/>
+                        <line x1="90" y1="45" x2="90" y2="65" stroke="#4A2C17" stroke-width="0.5"/>
+                        <line x1="105" y1="45" x2="105" y2="65" stroke="#4A2C17" stroke-width="0.5"/>
+                        <line x1="120" y1="45" x2="120" y2="65" stroke="#4A2C17" stroke-width="0.5"/>
+                        <line x1="60" y1="52" x2="140" y2="52" stroke="#4A2C17" stroke-width="0.5"/>
+                        <line x1="60" y1="58" x2="140" y2="58" stroke="#4A2C17" stroke-width="0.5"/>
+                        
+                        <!-- 右側面 -->
+                        <rect x="140" y="45" width="35" height="20" fill="#FFF8DC" opacity="0.9" stroke="#4A2C17" stroke-width="1"/>
+                        <!-- 右側の格子 -->
+                        <line x1="150" y1="45" x2="150" y2="65" stroke="#4A2C17" stroke-width="0.5"/>
+                        <line x1="160" y1="45" x2="160" y2="65" stroke="#4A2C17" stroke-width="0.5"/>
+                        <line x1="140" y1="52" x2="175" y2="52" stroke="#4A2C17" stroke-width="0.5"/>
+                        <line x1="140" y1="58" x2="175" y2="58" stroke="#4A2C17" stroke-width="0.5"/>
+                        
+                        <!-- 内部の暖かい光 -->
+                        <rect x="25" y="45" width="150" height="20" fill="url(#windowLight)" opacity="0.3"/>
+                    </g>
+                    
+                    <!-- 屋根（瓦屋根） -->
+                    <g class="boat-roof">
+                        <!-- 屋根本体 -->
+                        <path d="M20 45 L25 38 L175 38 L180 45 Z" fill="url(#tileGradient)" stroke="#1C3333" stroke-width="1"/>
+                        <path d="M15 38 L20 30 L180 30 L185 38 Z" fill="url(#tileGradient)" stroke="#1C3333" stroke-width="1"/>
+                        
+                        <!-- 瓦の表現 -->
+                        <path d="M20 30 Q100 28 180 30" stroke="#3A5555" stroke-width="1" fill="none"/>
+                        <line x1="40" y1="30" x2="38" y2="38" stroke="#2F4F4F" stroke-width="0.5" opacity="0.5"/>
+                        <line x1="60" y1="30" x2="58" y2="38" stroke="#2F4F4F" stroke-width="0.5" opacity="0.5"/>
+                        <line x1="80" y1="30" x2="78" y2="38" stroke="#2F4F4F" stroke-width="0.5" opacity="0.5"/>
+                        <line x1="100" y1="30" x2="100" y2="38" stroke="#2F4F4F" stroke-width="0.5" opacity="0.5"/>
+                        <line x1="120" y1="30" x2="122" y2="38" stroke="#2F4F4F" stroke-width="0.5" opacity="0.5"/>
+                        <line x1="140" y1="30" x2="142" y2="38" stroke="#2F4F4F" stroke-width="0.5" opacity="0.5"/>
+                        <line x1="160" y1="30" x2="162" y2="38" stroke="#2F4F4F" stroke-width="0.5" opacity="0.5"/>
+                        
+                        <!-- 屋根の縁飾り -->
+                        <path d="M15 38 L185 38" stroke="#1C3333" stroke-width="1.5"/>
+                        <path d="M20 45 L180 45" stroke="#1C3333" stroke-width="1.5"/>
+                    </g>
+                    
+                    <!-- 伝統的な提灯 -->
+                    <g class="lanterns">
+                        <!-- 提灯1 -->
+                        <g transform="translate(35, 36)">
+                            <ellipse cx="0" cy="0" rx="4" ry="6" fill="#FF6347" opacity="0.9" stroke="#8B0000" stroke-width="0.5"/>
+                            <line x1="0" y1="-6" x2="0" y2="-8" stroke="#4A2C17" stroke-width="0.5"/>
+                            <ellipse cx="0" cy="0" rx="3.5" ry="5.5" fill="url(#realLantern)" filter="url(#softGlow)">
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <line x1="-3" y1="0" x2="3" y2="0" stroke="#8B0000" stroke-width="0.3" opacity="0.5"/>
+                        </g>
+                        
+                        <!-- 提灯2 -->
+                        <g transform="translate(65, 36)">
+                            <ellipse cx="0" cy="0" rx="4" ry="6" fill="#FF6347" opacity="0.9" stroke="#8B0000" stroke-width="0.5"/>
+                            <line x1="0" y1="-6" x2="0" y2="-8" stroke="#4A2C17" stroke-width="0.5"/>
+                            <ellipse cx="0" cy="0" rx="3.5" ry="5.5" fill="url(#realLantern)" filter="url(#softGlow)">
+                                <animate attributeName="opacity" values="1;0.8;1" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <line x1="-3" y1="0" x2="3" y2="0" stroke="#8B0000" stroke-width="0.3" opacity="0.5"/>
+                        </g>
+                        
+                        <!-- 提灯3 -->
+                        <g transform="translate(95, 36)">
+                            <ellipse cx="0" cy="0" rx="4" ry="6" fill="#FF6347" opacity="0.9" stroke="#8B0000" stroke-width="0.5"/>
+                            <line x1="0" y1="-6" x2="0" y2="-8" stroke="#4A2C17" stroke-width="0.5"/>
+                            <ellipse cx="0" cy="0" rx="3.5" ry="5.5" fill="url(#realLantern)" filter="url(#softGlow)">
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" begin="1s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <line x1="-3" y1="0" x2="3" y2="0" stroke="#8B0000" stroke-width="0.3" opacity="0.5"/>
+                        </g>
+                        
+                        <!-- 提灯4 -->
+                        <g transform="translate(125, 36)">
+                            <ellipse cx="0" cy="0" rx="4" ry="6" fill="#FF6347" opacity="0.9" stroke="#8B0000" stroke-width="0.5"/>
+                            <line x1="0" y1="-6" x2="0" y2="-8" stroke="#4A2C17" stroke-width="0.5"/>
+                            <ellipse cx="0" cy="0" rx="3.5" ry="5.5" fill="url(#realLantern)" filter="url(#softGlow)">
+                                <animate attributeName="opacity" values="1;0.8;1" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <line x1="-3" y1="0" x2="3" y2="0" stroke="#8B0000" stroke-width="0.3" opacity="0.5"/>
+                        </g>
+                        
+                        <!-- 提灯5 -->
+                        <g transform="translate(155, 36)">
+                            <ellipse cx="0" cy="0" rx="4" ry="6" fill="#FF6347" opacity="0.9" stroke="#8B0000" stroke-width="0.5"/>
+                            <line x1="0" y1="-6" x2="0" y2="-8" stroke="#4A2C17" stroke-width="0.5"/>
+                            <ellipse cx="0" cy="0" rx="3.5" ry="5.5" fill="url(#realLantern)" filter="url(#softGlow)">
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" begin="2s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <line x1="-3" y1="0" x2="3" y2="0" stroke="#8B0000" stroke-width="0.3" opacity="0.5"/>
+                        </g>
+                    </g>
+                    
+                    <!-- 水面の反射光 -->
+                    <g opacity="0.4">
+                        <ellipse cx="50" cy="85" rx="8" ry="3" fill="#ff9933">
+                            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+                        </ellipse>
+                        <ellipse cx="80" cy="85" rx="8" ry="3" fill="#ff9933">
+                            <animate attributeName="opacity" values="0.6;0.3;0.6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+                        </ellipse>
+                        <ellipse cx="110" cy="85" rx="8" ry="3" fill="#ff9933">
+                            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" begin="1s" repeatCount="indefinite"/>
+                        </ellipse>
+                        <ellipse cx="140" cy="85" rx="8" ry="3" fill="#ff9933">
+                            <animate attributeName="opacity" values="0.6;0.3;0.6" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+                        </ellipse>
+                    </g>
+                    
+                    <!-- 波紋エフェクト -->
+                    <g opacity="0.3">
+                        <path d="M15 82 Q40 85 65 82 T115 82 T165 82 T185 82" stroke="#4a90e2" stroke-width="1.5" fill="none">
+                            <animate attributeName="d" 
+                                values="M15 82 Q40 85 65 82 T115 82 T165 82 T185 82;
+                                        M15 82 Q40 79 65 82 T115 82 T165 82 T185 82;
+                                        M15 82 Q40 85 65 82 T115 82 T165 82 T185 82"
+                                dur="2.5s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M10 88 Q35 90 60 88 T110 88 T160 88 T190 88" stroke="#6ba3e5" stroke-width="1" fill="none">
+                            <animate attributeName="d" 
+                                values="M10 88 Q35 90 60 88 T110 88 T160 88 T190 88;
+                                        M10 88 Q35 86 60 88 T110 88 T160 88 T190 88;
+                                        M10 88 Q35 90 60 88 T110 88 T160 88 T190 88"
+                                dur="3s" begin="0.5s" repeatCount="indefinite"/>
+                        </path>
+                    </g>
+                </svg>
+                <!-- 波のエフェクト -->
+                <div class="loading-wave-trail"></div>
+            </div>
+            <p class="loading-text">AI屋形船へようこそ</p>
+        </div>
+    </div>
+
+    <!-- カスタムカーソル -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 5 L35 20 L20 35 L5 20 Z" fill="url(#logo-gradient)" opacity="0.8"/>
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea"/>
+                            <stop offset="100%" style="stop-color:#764ba2"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">AI屋形船 <span class="logo-sub">YAKATABUNE</span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#concept" class="nav-link" data-text="Concept">Concept</a></li>
+                <li><a href="#gallery" class="nav-link" data-text="Gallery">Gallery</a></li>
+                <li><a href="#waitlist" class="nav-link" data-text="Join">Join</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Episode III</div>
+            <h1 class="hero-title">
+                <span class="title-main">第3回 AI屋形船</span>
+                <span class="title-sub">YAKATABUNE × AI</span>
+            </h1>
+            <p class="hero-tagline">東京の夜景とともに、AIの可能性を語り合う特別な時間</p>
+            <div class="hero-description">
+                <p>第3回の開催が決定しました</p>
+                <p>あなたの参加をお待ちしています</p>
+            </div>
+            <div class="hero-actions">
+                <a href="#waitlist" class="btn-primary">
+                    <span>ウェイティングリストに参加</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#gallery" class="btn-secondary">過去のイベントを見る</a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <p>Scroll</p>
+        </div>
+    </section>
+
+    <!-- コンセプトセクション -->
+    <section id="concept" class="concept">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Concept</span>
+                <h2 class="section-title">AI屋形船が紡ぐ物語</h2>
+            </div>
+            <div class="concept-grid">
+                <div class="concept-card" data-aos="fade-up">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Connection</h3>
+                    <p>異なる背景を持つ人々が集い、新たな繋がりを生み出す場所</p>
+                </div>
+                <div class="concept-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Discovery</h3>
+                    <p>日常では出会えない発見と、新しい視点との出会い</p>
+                </div>
+                <div class="concept-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Journey</h3>
+                    <p>参加者一人ひとりが主役となる、特別な時間の共有</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ギャラリーセクション -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Gallery</span>
+                <h2 class="section-title">Past Events</h2>
+                <p class="section-description">第1回・第2回の記憶</p>
+            </div>
+            
+            <!-- タブナビゲーション -->
+            <div class="gallery-tabs">
+                <button class="tab-btn active" data-event="1">Episode I</button>
+                <button class="tab-btn" data-event="2">Episode II</button>
+            </div>
+            
+            <!-- 第1回ギャラリー -->
+            <div class="gallery-content active" id="event-1">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="photo/event1-photo1.jpg" alt="第1回AI屋形船 東京湾夜景" loading="lazy">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Tokyo Bay Evening View</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="photo/event1-photo2.jpg" alt="第1回AI屋形船 集合写真" loading="lazy">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Group Photo with nocall.ai</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="photo/IMG_7134.JPG" alt="第1回AI屋形船 イベント風景" loading="lazy">
+                            <div class="image-overlay">
+                                <span class="overlay-text">Event Scene</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第2回ギャラリー -->
+            <div class="gallery-content" id="event-2">
+                <div class="coming-soon-message">
+                    <div class="message-content">
+                        <svg class="message-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3>Episode II - Coming Soon</h3>
+                        <p>第2回AI屋形船は開催準備中です</p>
+                        <p class="sub-message">素晴らしい夜の記録をお楽しみに</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ウェイティングリスト -->
+    <section id="waitlist" class="waitlist">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Join Us</span>
+                <h2 class="section-title">Waiting List</h2>
+                <p class="section-description">第3回開催のお知らせを最初に受け取る</p>
+            </div>
+            
+            <div class="form-wrapper">
+                <div class="form-container glass-card">
+                    <!-- Notionフォームへのリンク -->
+                    <div class="notion-form-section">
+                        <h3 class="form-title">📝 ウェイティングリスト登録</h3>
+                        <p class="form-intro">
+                            第3回AI屋形船イベントの開催情報を優先的にお届けします。<br>
+                            下記のボタンから登録フォームにアクセスしてください。
+                        </p>
+                        
+                        <a href="https://nocall.notion.site/24a295fd200880c7b304c737f0dfaaec" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="notion-register-btn">
+                            <span class="btn-icon">📋</span>
+                            <span class="btn-text">登録フォームを開く</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        
+                    </div>
+                    
+                    <!-- シェアセクション -->
+                    <div class="share-section-standalone">
+                        <p>お友達にもシェアしませんか？</p>
+                        <div class="share-buttons">
+                            <button class="share-btn twitter-share" onclick="shareTwitter()">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                                <span>X でシェア</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- サイドインフォ -->
+                <div class="form-info">
+                    <div class="info-card">
+                        <h4>なぜウェイティングリスト？</h4>
+                        <p>方舟イベントは、参加者一人ひとりとの出会いを大切にするため、人数を限定して開催しています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>AI屋形船 <span>YAKATABUNE</span></h3>
+                    <p>新しい出会いと発見の場</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Event</h4>
+                        <a href="#concept">Concept</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#waitlist">Join</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Connect</h4>
+                        <a href="#">X</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI屋形船 YAKATABUNE. All rights reserved.</p>
+                <p>Made with passion for connection</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
