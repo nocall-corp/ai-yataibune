@@ -234,7 +234,7 @@ function initializeAnimations() {
 // シェア機能（グローバル関数として定義）
 // ===========================
 window.shareTwitter = function() {
-    const shareText = 'AI屋形船イベント第3回の開催が決定！ウェイティングリストに登録して、新しい出会いと発見の場に参加しませんか？';
+    const shareText = 'AI屋形船イベント第3回の開催が決定！ウェイティングリストに登録して、新しい出会いと発見の場に参加しませんか？\n\n#AI屋形船';
     const shareUrl = window.location.href;
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
     window.open(twitterUrl, '_blank', 'width=600,height=400');

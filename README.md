@@ -90,7 +90,7 @@ ai-yataibune/
 
 ## 📄 ライセンス
 
-© 2024 AI屋形船 YAKATABUNE. All rights reserved.
+© 2025 AI屋形船 YAKATABUNE. All rights reserved.
 
 ---
 
